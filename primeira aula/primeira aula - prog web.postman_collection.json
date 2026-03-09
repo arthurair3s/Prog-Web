@@ -1,0 +1,300 @@
+{
+  "info": {
+    "_postman_id": "05bb3cf6-682a-4d4b-8516-c255a3403254",
+    "name": "primeira aula - prog web",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "43566779"
+  },
+  "item": [
+    {
+      "name": "alunos",
+      "item": [
+        {
+          "name": "/aluno",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nome\": \"Luiz Silva\",\r\n    \"matricula\": \"0003\",\r\n    \"cursos\": []\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{local}}/aluno",
+              "host": [
+                "{{local}}"
+              ],
+              "path": [
+                "aluno"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/alunos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{local}}/alunos",
+              "host": [
+                "{{local}}"
+              ],
+              "path": [
+                "alunos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/aluno/:id",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{local}}/aluno/1",
+              "host": [
+                "{{local}}"
+              ],
+              "path": [
+                "aluno",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/aluno/:id",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nome\": \"Pedro Alvez\",\r\n    \"matricula\": \"0005\",\r\n    \"cursos\": []\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{local}}/aluno/2",
+              "host": [
+                "{{local}}"
+              ],
+              "path": [
+                "aluno",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/aluno/:id",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nome\": \"Arthur\",\r\n    \"matricula\": \"0000\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{local}}/aluno/2",
+              "host": [
+                "{{local}}"
+              ],
+              "path": [
+                "aluno",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/aluno/:id",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{local}}/aluno/1",
+              "host": [
+                "{{local}}"
+              ],
+              "path": [
+                "aluno",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "cursos",
+      "item": [
+        {
+          "name": "/curso",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nome\": \"Luciano Silva\",\r\n    \"matricula\": \"0004\",\r\n    \"cursos\": []\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{local}}/curso",
+              "host": [
+                "{{local}}"
+              ],
+              "path": [
+                "curso"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/cursos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{local}}/cursos",
+              "host": [
+                "{{local}}"
+              ],
+              "path": [
+                "cursos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/curso/:id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{local}}/curso/2",
+              "host": [
+                "{{local}}"
+              ],
+              "path": [
+                "curso",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/curso/:id",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "{{local}}/curso/1",
+              "host": [
+                "{{local}}"
+              ],
+              "path": [
+                "curso",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/curso/:id",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nome\": \"Arthur\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{local}}/curso/1",
+              "host": [
+                "{{local}}"
+              ],
+              "path": [
+                "curso",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/curso/:id",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nome\": \"Arthur\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{local}}/curso/1",
+              "host": [
+                "{{local}}"
+              ],
+              "path": [
+                "curso",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "local",
+      "value": "",
+      "type": "default"
+    }
+  ]
+}

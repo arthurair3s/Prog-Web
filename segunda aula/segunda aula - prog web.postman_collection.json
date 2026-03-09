@@ -1,0 +1,346 @@
+{
+  "info": {
+    "_postman_id": "e89a9113-8232-46c8-93a2-98b9c765e2b4",
+    "name": "segunda aula - prog web",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "43566779"
+  },
+  "item": [
+    {
+      "name": "/utils/sum-array",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"numbers\": [1,2,3,4,5]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{local}}/utils/sum-array",
+          "host": [
+            "{{local}}"
+          ],
+          "path": [
+            "utils",
+            "sum-array"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/utils/max-number",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"numbers\": [1,2,3,4,5]\r\n}"
+        },
+        "url": {
+          "raw": "{{local}}/utils/max-number",
+          "host": [
+            "{{local}}"
+          ],
+          "path": [
+            "utils",
+            "max-number"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/utils/average",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"numbers\": [1,2,3,4,5]\r\n}"
+        },
+        "url": {
+          "raw": "{{local}}/utils/average",
+          "host": [
+            "{{local}}"
+          ],
+          "path": [
+            "utils",
+            "average"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/utils/sort-array",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"numbers\": [1,2,3,4,5]\r\n}"
+        },
+        "url": {
+          "raw": "{{local}}/utils/sort-array",
+          "host": [
+            "{{local}}"
+          ],
+          "path": [
+            "utils",
+            "sort-array"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/utils/remove-duplicates",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"numbers\": [5,7,8,2,1,5,3,2,2,4,5,6,1,3,2,5]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{local}}/utils/remove-duplicates",
+          "host": [
+            "{{local}}"
+          ],
+          "path": [
+            "utils",
+            "remove-duplicates"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/utils/count-items",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"numbers\": [5,7,8,2,1,5,3,2,2,4,5,6,1,3,2,5]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{local}}/utils/remove-duplicates",
+          "host": [
+            "{{local}}"
+          ],
+          "path": [
+            "utils",
+            "remove-duplicates"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/utils/reverse-string/:string",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{local}}/utils/reverse-string/beatriz",
+          "host": [
+            "{{local}}"
+          ],
+          "path": [
+            "utils",
+            "reverse-string",
+            "beatriz"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/utils/count-words",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"text\": \"arthur aires pereira\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{local}}/utils/count-words",
+          "host": [
+            "{{local}}"
+          ],
+          "path": [
+            "utils",
+            "count-words"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/utils/palindrome/:string",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{local}}/utils/reverse-string/beatriz",
+          "host": [
+            "{{local}}"
+          ],
+          "path": [
+            "utils",
+            "reverse-string",
+            "beatriz"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/utils/camelcase/:string",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{local}}/utils/reverse-string/beatriz",
+          "host": [
+            "{{local}}"
+          ],
+          "path": [
+            "utils",
+            "reverse-string",
+            "beatriz"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/utils/circle-area/:radius",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{local}}/utils/reverse-string/beatriz",
+          "host": [
+            "{{local}}"
+          ],
+          "path": [
+            "utils",
+            "reverse-string",
+            "beatriz"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/utils/fibonacci/:num",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{local}}/utils/reverse-string/beatriz",
+          "host": [
+            "{{local}}"
+          ],
+          "path": [
+            "utils",
+            "reverse-string",
+            "beatriz"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "local",
+      "value": "",
+      "type": "default"
+    }
+  ]
+}
