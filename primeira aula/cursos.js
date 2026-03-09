@@ -6,6 +6,12 @@ const router = express()
 router.post('/curso', (req, res) => {
   let _id = 1
 
+  const { nome } = req.body
+
+  if (!nome) {
+    return res.status(400).send('Nome é um atributo obrigatório')
+  }
+
   if (arrCursos.length != 0) {
     const ultimoCurso = arrCursos[arrCursos.length - 1]
     _id = ultimoCurso.cursoId + 1
@@ -16,11 +22,11 @@ router.post('/curso', (req, res) => {
     nome: req.body.nome
   })
 
-  res.status(201).send('Ok')
+  return res.status(201).send('Ok')
 })
 
 router.get('/cursos', (req, res) => {
-  res.status(200).json(arrCursos)
+  return res.status(200).json(arrCursos)
 })
 
 router.get('/curso/:id', (req, res) => {
@@ -31,7 +37,7 @@ router.get('/curso/:id', (req, res) => {
     return res.status(404).send('Curso não encontrado')
   }
 
-  res.status(200).json(curso)
+  return res.status(200).json(curso)
 })
 
 router.put('/curso/:id', (req, res) => {
@@ -44,7 +50,7 @@ router.put('/curso/:id', (req, res) => {
 
   curso.nome = req.body.nome
 
-  res.status(200).json(curso)
+  return res.status(200).json(curso)
 })
 
 router.patch('/curso/:id', (req, res) => {
@@ -63,7 +69,7 @@ router.patch('/curso/:id', (req, res) => {
     }
   }
 
-  res.status(200).json(curso)
+  return res.status(200).json(curso)
 })
 
 router.delete('/curso/:id', (req, res) => {
@@ -79,7 +85,7 @@ router.delete('/curso/:id', (req, res) => {
   arrCursos.length = 0
   arrCursos.push(...newArrCursos)
 
-  res.status(204).end()
+  return res.status(204).end()
 })
 
 export default router

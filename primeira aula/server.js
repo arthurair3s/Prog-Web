@@ -1,6 +1,6 @@
 import express from 'express'
-import alunosRoutes from './api_alunos.js'
-import cursosRoutes from './api_cursos.js'
+import alunosRoutes from './alunos.js'
+import cursosRoutes from './cursos.js'
 
 const app = express()
 const PORT = 3000

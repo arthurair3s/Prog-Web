@@ -6,23 +6,29 @@ const router = express.Router()
 router.post('/aluno', (req, res) => {
   let _id = 1
 
-  if (arrAlunos.length != 0) {
+  const { nome, matricula, cursos } = req.body
+
+  if (!nome || !matricula || !cursos) {
+    return res.status(400).send('Nome, matrícula e cursos são obrigatórios')
+  }
+
+  if (arrAlunos.length !== 0) {
     const ultimoAluno = arrAlunos[arrAlunos.length - 1]
     _id = ultimoAluno.alunoId + 1
   }
 
   arrAlunos.push({
     alunoId: _id,
-    nome: req.body.nome,
-    matricula: req.body.matricula,
-    cursos: req.body.cursos
+    nome,
+    matricula,
+    cursos
   })
 
-  res.status(201).send('Ok')
+  return res.status(201).send('Aluno criado com sucesso')
 })
 
 router.get('/alunos', (req, res) => {
-  res.status(200).json(arrAlunos)
+  return res.status(200).json(arrAlunos)
 })
 
 router.get('/aluno/:id', (req, res) => {
@@ -33,7 +39,7 @@ router.get('/aluno/:id', (req, res) => {
     return res.status(404).send('Aluno não encontrado')
   }
 
-  res.status(200).json(aluno)
+  return res.status(200).json(aluno)
 })
 
 router.put('/aluno/:id', (req, res) => {
@@ -48,7 +54,7 @@ router.put('/aluno/:id', (req, res) => {
   aluno.matricula = req.body.matricula
   aluno.cursos = req.body.cursos
 
-  res.status(200).json(aluno)
+  return res.status(200).json(aluno)
 })
 
 router.patch('/aluno/:id', (req, res) => {
@@ -67,7 +73,7 @@ router.patch('/aluno/:id', (req, res) => {
     }
   }
 
-  res.status(200).json(aluno)
+  return res.status(200).json(aluno)
 })
 
 router.delete('/aluno/:id', (req, res) => {
@@ -83,7 +89,7 @@ router.delete('/aluno/:id', (req, res) => {
   arrAlunos.length = 0
   arrAlunos.push(...newArrAlunos)
 
-  res.status(204).end()
+  return res.status(204).end()
 })
 
 export default router
