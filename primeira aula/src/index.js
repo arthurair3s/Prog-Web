@@ -1,14 +1,12 @@
 import express from 'express'
-import alunosRoutes from './alunos.js'
-import cursosRoutes from './cursos.js'
+import router from './router.js'
 
 const app = express()
 const PORT = 3000
 
 app.use(express.json())
 
-app.use(alunosRoutes)
-app.use(cursosRoutes)
+app.use('/', router)
 
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`)

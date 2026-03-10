@@ -1,16 +1,15 @@
-import express from 'express'
-import { arrCursos } from './db.js'
+import { arrCursos } from './cursoRepository.js'
 
-const router = express()
-
-router.post('/curso', (req, res) => {
+export const criar = async dadosAlunos => {
   let _id = 1
 
-  const { nome } = req.body
+  const { nome } = dadosAlunos
 
+  /*
   if (!nome) {
     return res.status(400).send('Nome é um atributo obrigatório')
   }
+  */
 
   if (arrCursos.length != 0) {
     const ultimoCurso = arrCursos[arrCursos.length - 1]
@@ -22,46 +21,52 @@ router.post('/curso', (req, res) => {
     nome: req.body.nome
   })
 
-  return res.status(201).send('Ok')
-})
+  return 'Curso criado com sucesso'
+}
 
-router.get('/cursos', (req, res) => {
-  return res.status(200).json(arrCursos)
-})
+export const listar = async () => {
+  return arrCursos
+}
 
-router.get('/curso/:id', (req, res) => {
-  const _id = parseInt(req.params.id)
+export const visualizar = async paramId => {
+  const _id = parseInt(paramId)
   const curso = arrCursos.find(curso => curso.cursoId === _id)
 
+  /*
   if (!curso) {
     return res.status(404).send('Curso não encontrado')
   }
+  */
 
-  return res.status(200).json(curso)
-})
+  return curso
+}
 
-router.put('/curso/:id', (req, res) => {
-  const _id = parseInt(req.params.id)
+export const atualizar = async (paramId, bodyCurso) => {
+  const _id = parseInt(paramId)
   const curso = arrCursos.find(curso => curso.cursoId === _id)
 
+  /*
   if (!curso) {
     return res.status(404).send('Curso não encontrado')
   }
+  */
 
-  curso.nome = req.body.nome
+  curso.nome = bodyCurso.nome
 
-  return res.status(200).json(curso)
-})
+  return curso
+}
 
-router.patch('/curso/:id', (req, res) => {
-  const _id = parseInt(req.params.id)
+export const retificar = async (paramId, bodyCurso) => {
+  const _id = parseInt(paramId)
   const curso = arrCursos.find(curso => curso.cursoId === _id)
 
+  /*
   if (!curso) {
     return res.status(404).send('Curso não encontrado')
   }
+  */
 
-  const campos = Object.keys(req.body)
+  const campos = Object.keys(bodyCurso)
 
   for (let i = 0; i < campos.length; i++) {
     if (campos[i] != 'cursoId') {
@@ -70,22 +75,22 @@ router.patch('/curso/:id', (req, res) => {
   }
 
   return res.status(200).json(curso)
-})
+}
 
-router.delete('/curso/:id', (req, res) => {
-  const _id = parseInt(req.params.id)
+export const deletar = async paramId => {
+  const _id = parseInt(paramId)
   const lengthArray = arrCursos.length
 
   const newArrCursos = arrCursos.filter(curso => curso.cursoId !== _id)
 
+  /*
   if (lengthArray == newArrCursos.length) {
     return res.status(404).send('Exclusão não concluída')
   }
+  */
 
   arrCursos.length = 0
   arrCursos.push(...newArrCursos)
 
-  return res.status(204).end()
-})
-
-export default router
+  return 'Curso deletado com sucesso'
+}
