@@ -18,7 +18,7 @@ export const criar = async dadosAlunos => {
 
   arrCursos.push({
     cursoId: _id,
-    nome: req.body.nome
+    nome: dadosAlunos.nome
   })
 
   return 'Curso criado com sucesso'
